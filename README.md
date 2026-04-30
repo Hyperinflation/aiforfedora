@@ -45,6 +45,12 @@ Not:
 - Fedora makinede calisacak istemci: `fedora_bridge_client.py`
 - Amaç: Fedora'dan soru gonder, Windows AI host'tan cevap al.
 - COPR/RPM dosyalari: `packaging/rpm/`
+- RPM kurulduktan sonra `local-ai-bridge` komutu tek basina calistirilinca
+  interaktif chat acilir (`/quit` ile cikis).
+- Uzun komut yazmamak icin Fedora'da bir kere sunlari ayarlayabilirsin:
+  - `export AI_BRIDGE_SERVER=ws://WINDOWS_IP:8000/ws/chat`
+  - `export AI_BRIDGE_TOKEN=senin_token`
+  Sonra sadece `local-ai-bridge` yazman yeterlidir.
 
 ## Dizin
 
