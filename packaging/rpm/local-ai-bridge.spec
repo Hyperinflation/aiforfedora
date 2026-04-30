@@ -1,6 +1,6 @@
 Name:           local-ai-bridge
 Version:        0.1.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Fedora bridge with CLI and desktop chat
 
 License:        MIT
@@ -26,7 +26,7 @@ It forwards prompts to a Windows-hosted AI WebSocket endpoint and shows replies.
 %install
 install -D -m 0755 fedora_bridge_client.py %{buildroot}%{_bindir}/local-ai-bridge
 install -D -m 0755 fedora_bridge_chat_gui.py %{buildroot}%{_bindir}/local-ai-bridge-chat
-install -D -m 0644 packaging/rpm/local-ai-bridge.desktop %{buildroot}%{_datadir}/applications/local-ai-bridge.desktop
+install -D -m 0644 local-ai-bridge.desktop %{buildroot}%{_datadir}/applications/local-ai-bridge.desktop
 
 %files
 %license LICENSE
@@ -36,6 +36,9 @@ install -D -m 0644 packaging/rpm/local-ai-bridge.desktop %{buildroot}%{_datadir}
 %{_datadir}/applications/local-ai-bridge.desktop
 
 %changelog
+* Thu Apr 30 2026 Local AI Maintainer <maintainer@example.com> - 0.1.0-3
+- Fix SRPM builds by installing .desktop from source root.
+
 * Thu Apr 30 2026 Local AI Maintainer <maintainer@example.com> - 0.1.0-2
 - Add desktop GUI chat app and launcher for menu-based chat usage.
 

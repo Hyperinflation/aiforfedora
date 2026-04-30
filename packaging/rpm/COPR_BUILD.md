@@ -17,6 +17,8 @@ Bu paket Fedora istemcisi icindir: soru Fedora'dan gider, cevap Windows AI host'
 
 Git repository icine en az su dosyalar olmalı:
 - `fedora_bridge_client.py`
+- `fedora_bridge_chat_gui.py`
+- `local-ai-bridge.desktop`
 - `LICENSE`
 - `README.md`
 - `packaging/rpm/local-ai-bridge.spec`

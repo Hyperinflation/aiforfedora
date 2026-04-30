@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Local AI Bridge
+Comment=Chat with your Windows-hosted AI assistant
+Exec=local-ai-bridge-chat
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=Utility;Network;
+StartupNotify=true
