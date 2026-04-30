@@ -1,7 +1,7 @@
 Name:           local-ai-bridge
 Version:        0.1.0
-Release:        1%{?dist}
-Summary:        Fedora CLI bridge for remote Windows AI inference
+Release:        2%{?dist}
+Summary:        Fedora bridge with CLI and desktop chat
 
 License:        MIT
 URL:            https://example.local/local-ai-bridge
@@ -11,10 +11,11 @@ BuildArch:      noarch
 
 Requires:       python3
 Requires:       python3dist(websocket-client)
+Requires:       python3-tkinter
 
 %description
-local-ai-bridge is a minimal Fedora CLI tool that forwards prompts to a
-Windows-hosted AI WebSocket endpoint and prints responses in terminal.
+local-ai-bridge provides both a CLI client and a desktop chat app for Fedora.
+It forwards prompts to a Windows-hosted AI WebSocket endpoint and shows replies.
 
 %prep
 %autosetup
@@ -24,13 +25,20 @@ Windows-hosted AI WebSocket endpoint and prints responses in terminal.
 
 %install
 install -D -m 0755 fedora_bridge_client.py %{buildroot}%{_bindir}/local-ai-bridge
+install -D -m 0755 fedora_bridge_chat_gui.py %{buildroot}%{_bindir}/local-ai-bridge-chat
+install -D -m 0644 packaging/rpm/local-ai-bridge.desktop %{buildroot}%{_datadir}/applications/local-ai-bridge.desktop
 
 %files
 %license LICENSE
 %doc README.md
 %{_bindir}/local-ai-bridge
+%{_bindir}/local-ai-bridge-chat
+%{_datadir}/applications/local-ai-bridge.desktop
 
 %changelog
+* Thu Apr 30 2026 Local AI Maintainer <maintainer@example.com> - 0.1.0-2
+- Add desktop GUI chat app and launcher for menu-based chat usage.
+
 * Thu Apr 30 2026 Local AI Maintainer <maintainer@example.com> - 0.1.0-1
 - Initial RPM for Fedora COPR client bridge.
 
