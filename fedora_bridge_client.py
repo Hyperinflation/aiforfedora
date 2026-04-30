@@ -7,6 +7,8 @@ Fedora-side CLI client that forwards prompts to Windows AI host over WebSocket.
 import argparse
 import json
 import os
+import shutil
+import subprocess
 import sys
 
 from websocket import create_connection
@@ -55,6 +57,15 @@ def run_interactive_chat(server_url: str, web_mode: bool, token: str) -> int:
         print(f"Asistan> {answer}")
 
 
+def launch_gui_if_available() -> bool:
+    gui_cmd = shutil.which("local-ai-bridge-chat")
+    has_display = bool(os.getenv("DISPLAY") or os.getenv("WAYLAND_DISPLAY"))
+    if not (gui_cmd and has_display):
+        return False
+    subprocess.run([gui_cmd], check=False)
+    return True
+
+
 def main() -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -81,12 +92,20 @@ def main() -> int:
         "--interactive",
         "-i",
         action="store_true",
-        help="Interaktif sohbet modu",
+        help="Terminalde interaktif sohbet modu",
+    )
+    parser.add_argument(
+        "--no-gui",
+        action="store_true",
+        help="Prompt verilmediginde GUI yerine terminal sohbeti ac",
     )
     parser.add_argument("prompt", nargs="*", help="Sorulacak metin")
     args = parser.parse_args()
 
     text = " ".join(args.prompt).strip()
+    if not text and not args.interactive and not args.no_gui and launch_gui_if_available():
+        return 0
+
     if args.interactive or not text:
         return run_interactive_chat(args.server, args.web, args.token)
 

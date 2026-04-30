@@ -1,6 +1,6 @@
 Name:           local-ai-bridge
 Version:        0.1.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Fedora bridge with CLI and desktop chat
 
 License:        MIT
@@ -36,6 +36,9 @@ install -D -m 0644 local-ai-bridge.desktop %{buildroot}%{_datadir}/applications/
 %{_datadir}/applications/local-ai-bridge.desktop
 
 %changelog
+* Thu Apr 30 2026 Local AI Maintainer <maintainer@example.com> - 0.1.0-4
+- Make local-ai-bridge launch GUI by default on desktop sessions.
+
 * Thu Apr 30 2026 Local AI Maintainer <maintainer@example.com> - 0.1.0-3
 - Fix SRPM builds by installing .desktop from source root.
 

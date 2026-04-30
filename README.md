@@ -48,7 +48,9 @@ Not:
 - Masaustu uygulamasi: RPM kurulumundan sonra uygulama menusunda
   `Local AI Bridge` gorunur ve tiklayinca chat penceresi acilir.
 - RPM kurulduktan sonra `local-ai-bridge` komutu tek basina calistirilinca
-  interaktif chat acilir (`/quit` ile cikis).
+  (grafik oturumda) GUI chat acilir.
+- Terminal sohbetini zorlamak icin: `local-ai-bridge --no-gui`
+- Terminal sohbetinde web zorlamak icin: `local-ai-bridge --web --no-gui`
 - Uzun komut yazmamak icin Fedora'da bir kere sunlari ayarlayabilirsin:
   - `export AI_BRIDGE_SERVER=ws://WINDOWS_IP:8000/ws/chat`
   - `export AI_BRIDGE_TOKEN=senin_token`
