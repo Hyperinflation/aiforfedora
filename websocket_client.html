@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local AI WS Chat</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f3f5f7; margin: 0; padding: 20px; }
+    .box { width: 360px; height: 560px; background: #fff; border: 1px solid #d9dee5; border-radius: 10px; display: flex; flex-direction: column; }
+    .top { padding: 10px; border-bottom: 1px solid #e6e9ef; display: flex; justify-content: space-between; align-items: center; }
+    .chat { flex: 1; overflow: auto; padding: 10px; font-size: 14px; }
+    .input { padding: 10px; border-top: 1px solid #e6e9ef; }
+    input[type="text"] { width: 100%; padding: 8px; box-sizing: border-box; }
+    .line { margin-bottom: 8px; }
+    .sys { color: #607089; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="top">
+      <strong>WS Chat</strong>
+      <label><input id="webMode" type="checkbox" /> 🌐 Web</label>
+    </div>
+    <div id="chat" class="chat"></div>
+    <div class="input">
+      <input id="msg" type="text" placeholder="Mesaj yaz, Enter ile gonder..." />
+    </div>
+  </div>
+
+  <script>
+    const chat = document.getElementById("chat");
+    const msg = document.getElementById("msg");
+    const webMode = document.getElementById("webMode");
+    const ws = new WebSocket("ws://127.0.0.1:8000/ws/chat");
+
+    function addLine(role, text, cls = "") {
+      const div = document.createElement("div");
+      div.className = "line " + cls;
+      div.textContent = role + ": " + text;
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    ws.onopen = () => addLine("Sistem", "Baglandi", "sys");
+    ws.onclose = () => addLine("Sistem", "Baglanti kapandi", "sys");
+    ws.onerror = () => addLine("Sistem", "WebSocket hatasi", "sys");
+
+    ws.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      if (data.type === "status") addLine("Sistem", data.message, "sys");
+      if (data.type === "answer") addLine("Asistan", data.message);
+      if (data.type === "error") addLine("Hata", data.message, "sys");
+    };
+
+    msg.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter") return;
+      const text = msg.value.trim();
+      if (!text) return;
+      addLine("Sen", text);
+      ws.send(JSON.stringify({ message: text, web_mode: webMode.checked }));
+      msg.value = "";
+    });
+  </script>
+</body>
+</html>
+

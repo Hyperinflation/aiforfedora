@@ -1,0 +1,82 @@
+[
+  {
+    "role": "user",
+    "content": "Kisa selam ver"
+  },
+  {
+    "role": "assistant",
+    "content": "Merhaba 😊"
+  },
+  {
+    "role": "user",
+    "content": "Kisa selam ver"
+  },
+  {
+    "role": "assistant",
+    "content": "Merhaba! 😊"
+  },
+  {
+    "role": "user",
+    "content": "merhaba"
+  },
+  {
+    "role": "assistant",
+    "content": "Merhaba! 😊"
+  },
+  {
+    "role": "user",
+    "content": "Ro-ASD kimdir ve nedir"
+  },
+  {
+    "role": "assistant",
+    "content": "Ro-ASD, performans ve günlük kullanım kolaylığına odaklanan, Fedora tabanlı bir Linux dağıtımudur. Kullanıcı dostu arayüz ve minimal terminal bağımlılığı ile optimize edilmiş bir deneyim sunar. Daha fazla bilgi için [GitHub sayfası](https://github.com/Project-Ro-ASD)."
+  },
+  {
+    "role": "user",
+    "content": "Merhaba ubuntunun en guncel sürümü nedir"
+  },
+  {
+    "role": "assistant",
+    "content": "Ubuntu'nun en son sürümü **Ubuntu 24.04 LTS** (Long-Term Support) olarak 2024年4月 yayına çıkmıştır. Bu sürüm, 2029 yılına kadar desteklenecek ve istikrarlı bir sürüm olarak sunulmaktadır. Ayrıca, 24.10 (non-LTS) sürümü de mevcuttur ancak destek süresi daha kısadır. Daha güncel bilgi için [Ubuntu resmi sitesi](https://ubuntu.com/download) kontrol edebilirsiniz. 😊"
+  },
+  {
+    "role": "user",
+    "content": "ubuntunun son surumu nedir"
+  },
+  {
+    "role": "assistant",
+    "content": "Ubuntu'nun en son sürümü **Ubuntu 24.10** (non-LTS) olarak 2024 yılının sonunda yayınlandı. Ancak, uzun vadeli destek (LTS) sürümü **Ubuntu 24.04 LTS** (2024 yılının başı) olarak devam etmektedir. 25.04 sürümü henüz resmi olarak yayınlanmamıştır. Daha güncel bilgi için [Ubuntu resmi sitesi](https://ubuntu.com/download) kontrol edebilirsiniz. 😊"
+  },
+  {
+    "role": "user",
+    "content": "Fedoranin en son surumu nedir"
+  },
+  {
+    "role": "assistant",
+    "content": "Fedora'nın en son sürümü **Fedora 40** (2024 yılının Temmuz ayında yayınlandı) olarak güncellendi. Bu sürüm, Workstation, Server ve Cloud gibi farklı versiyonlarla birlikte sunulmaktadır. Daha fazla bilgi için [Fedora resmi sitesi](https://getfedora.org/) kontrol edebilirsiniz. 😊"
+  },
+  {
+    "role": "user",
+    "content": "Fedoranin en gncel srm nedir"
+  },
+  {
+    "role": "assistant",
+    "content": "Fedora'da \"SRM\" (Supplier Relationship Management) ile ilgili özel bir yazılım paketi veya dağıtım bulunmamaktadır. SRM genellikle tedarikçi ilişkilerini yönetmek için kullanılan bir ERP (Enterprise Resource Planning) modülüdür (örneğin SAP SRM). Fedora, Linux dağıtımına özel olarak bu tür yazılımların kurulumunu destekler ancak doğrudan bir \"SRM\" paketi sunmaz. \n\nEğer SRM yazılımı arıyorsanız, Fedora'da bu yazılımları paket yöneticisi (dnf) aracılığıyla veya kaynak kodlardan kurabilirsiniz. Daha fazla bilgi için Fedora resmi dokümantasyonunu veya paket deposunu inceleyebilirsiniz. 😊"
+  },
+  {
+    "role": "user",
+    "content": "Fedoranin en son surumu nedir"
+  },
+  {
+    "role": "assistant",
+    "content": "Fedora'nın en son sürümü **Fedora 40** (2024 yılının Temmuz ayında yayınlandı) olarak güncellendi. Bu sürüm, Workstation, Server ve Cloud gibi farklı versiyonlarla birlikte sunulmaktadır. Daha güncel bilgi için [Fedora resmi sitesi](https://getfedora.org/) kontrol edebilirsiniz. 😊  \n\n> Not: Bazı kaynaklar, 2026 tarihli bir \"Fedora 44\" sürümüne dair bilgi veriyor, ancak bu henüz resmi olarak yayınlanmamıştır. En güvenilir kaynak, Fedora'nın resmi sitesidir."
+  },
+  {
+    "role": "user",
+    "content": "Suan hangi yildayiz"
+  },
+  {
+    "role": "assistant",
+    "content": "Suan (2026) **Gregoryan takvimine göre 2026** yıldır. Ancak **Hicri takvimine göre 1447** yıldır. Hicri takvim, güneş takvimi yerine ay takvimi esas alınarak hesaplanır ve bu nedenle yıl başı (Mevlid) farklı tarihlerde değişebilir. \n\nÖzetle:  \n- **Gregoryan (Güneş) Takvimi:** 2026  \n- **Hicri (Ay) Takvimi:** 1447  \n\nDilerseniz, Hicri takvimdeki yıl başı (Mevlid) tarihi de belirtebilirim. 😊"
+  }
+]
